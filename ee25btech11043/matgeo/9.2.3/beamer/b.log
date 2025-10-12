@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  12 OCT 2025 18:56
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  12 OCT 2025 19:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2251,7 +2251,7 @@ Package pdftex.def Info: ../figs/fig2.png  used on input line 367.
 \tf@snm=\write9
 \openout9 = `b.snm'.
 
-runsystem(latexminted cleantemp  --timestamp 20251012185657 92EB5FFEE6AE2FEC3AD
+runsystem(latexminted cleantemp  --timestamp 20251012190106 92EB5FFEE6AE2FEC3AD
 71C777531578F)...executed safely (allowed).
 
  (./b.aux)
@@ -2282,7 +2282,7 @@ o8.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/pu
 blic/lm/lmsy10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fo
 nts/type1/public/lm/lmsy8.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/te
 xmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on b.pdf (19 pages, 244630 bytes).
+Output written on b.pdf (19 pages, 244632 bytes).
 PDF statistics:
  638 PDF objects out of 1000 (max. 8388607)
  544 compressed objects within 6 object streams
