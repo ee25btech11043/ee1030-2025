@@ -1,0 +1,95 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern}
+\usepackage{tfrupee}
+\setlength{\headheight}{1cm}
+\setlength{\headsep}{0mm}
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\def\inputGnumericTable{}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+\usepackage{lscape}
+\usepackage{xparse}
+
+\bibliographystyle{IEEEtran}
+
+\title{12.576}
+\author{EE25BTECH11043 - Nishid Khandagre}
+
+\begin{document}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+
+\textbf{Question}:\
+If the characteristic polynomial and minimal polynomial of a square matrix $\vec{A}$ are $(\lambda-1)(\lambda+1)^4(\lambda-2)^5$ and $(\lambda-1)(\lambda+1)(\lambda-2)$, respectively, then the rank of the matrix $\vec{A}+\vec{I}$ is?
+
+\textbf{Solution: }
+Given:
+\begin{align}
+\chi_A(\lambda) &= (\lambda-1)(\lambda+1)^4(\lambda-2)^5 \\
+m_A(\lambda) &= (\lambda-1)(\lambda+1)(\lambda-2)
+\end{align}
+
+Size of $\vec{A}$=degree of $\chi_A$
+\begin{align}
+\deg\chi_A &= 1+4+5 = 10
+\end{align}
+Thus, $\vec{A}$ is a $10 \times 10$ matrix.\\\\
+The minimal polynomial $m_A(\lambda)$ has simple roots \\(all linear factors with exponent 1).
+\begin{align}
+m_A(\lambda) = (\lambda-1)(\lambda+1)(\lambda-2)
+\end{align}
+Since all roots are distinct, the matrix $\vec{A}$ is diagonalizable.\\\\
+
+Eigenvalues of $\vec{A}+\vec{I}$ and the zero-eigenspace:\\
+
+If $\lambda$ is an eigenvalue of $\vec{A}$, then $\lambda+1$ is an eigenvalue of .\\\\
+The eigenvalue 0 of $\vec{A}+\vec{I}$ corresponds to the eigenvalue $-1$ of $\vec{A}$.
+From $\chi_A(\lambda)$, the algebraic multiplicity of $\lambda=-1$ is 4.\\
+Since $\vec{A}$ is diagonalizable, the geometric multiplicity of $\lambda=-1$ is equal to its algebraic multiplicity, which is 4.\\
+Therefore, the geometric multiplicity of 0 for $\vec{A}+\vec{I}$ is 4.
+\begin{align}
+\operatorname{nullity}(\vec{A}+\vec{I}) &= \dim\ker(\vec{A}+\vec{I}) = 4
+\end{align}
+
+Rank-nullity theorem:
+\begin{align}
+\operatorname{rank}(\vec{A}+\vec{I}) + \operatorname{nullity}(\vec{A}+\vec{I}) &= n
+\end{align}
+Here, $n=10$ and $\operatorname{nullity}(\vec{A}+\vec{I})=4$.
+\begin{align}
+\operatorname{rank}(\vec{A}+\vec{I}) &= 10 - 4 \\
+&= 6
+\end{align}
+
+Thus, the rank of the matrix $\vec{A}+\vec{I}$ is 6.
+
+\end{document}
