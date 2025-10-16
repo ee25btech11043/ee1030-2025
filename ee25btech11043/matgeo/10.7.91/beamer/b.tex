@@ -83,7 +83,7 @@ showstringspaces=false,
 The point of intersection of the tangents at the ends of the latus rectum of the parabola $y^2 = 4x$ is
 \end{frame}
 
-\begin{frame}{Solution: General Form of Conic}
+\begin{frame}{Solution}
 The general form of a conic section is:
 \begin{align}
 \vec{x}^{\top}\vec{V}\vec{x} + 2\vec{u}^{\top}\vec{x} + f = 0
@@ -96,7 +96,7 @@ f &= 0
 \end{align}
 \end{frame}
 
-\begin{frame}{Solution: Latus Rectum Endpoints}
+\begin{frame}{Solution}
 For a parabola $y^2 = 4ax$, the latus rectum endpoints are $(a, 2a)$ and $(a, -2a)$.
 
 Given parabola is $y^2 = 4x$.
@@ -109,7 +109,7 @@ So, the endpoints of the latus rectum are:
 \end{align}
 \end{frame}
 
-\begin{frame}{Solution: Tangent Formula}
+\begin{frame}{Solution}
 The tangent at a point $\vec{q}$ on the conic is given by the formula:
 \begin{align}
 \myvec{\vec{V}\vec{q} + \vec{u}}^{\top}\vec{x} + \vec{u}^{\top}\vec{q} + f = 0
@@ -117,7 +117,7 @@ The tangent at a point $\vec{q}$ on the conic is given by the formula:
 Let's apply this for the first endpoint $\vec{q_1} = \myvec{1 \\ 2}$.
 \end{frame}
 
-\begin{frame}{Solution: Tangent at $\vec{q_1}$}
+\begin{frame}{Solution}
 For $\vec{q_1} = \myvec{1 \\ 2}$:
 \begin{align}
 \vec{V}\vec{q_1} &= \myvec{0 & 0 \\ 0 & 1}\myvec{1 \\ 2} = \myvec{0\\ 2} \\
@@ -127,13 +127,12 @@ f &= 0
 \end{align}
 The tangent at $\vec{q_1}$ is:
 \begin{align}
-\myvec{-2 \\ 2}^{\top}\vec{x} - 2 &= 0 \\
--2x + 2y - 2 &= 0 \\
-y &= x+1 \label{eq:tangent1}
-\end{align}
+    \myvec{-2 \\ 2}^\top\vec{x} - 2 = 0\\
+    \myvec{-1 \\ 1}^\top\vec{x}=1\label{eq:tangent1}
+    \end{align}
 \end{frame}
 
-\begin{frame}{Solution: Tangent at $\vec{q_2}$}
+\begin{frame}{Solution}
 For $\vec{q_2} = \myvec{1 \\ -2}$:
 \begin{align}
 \vec{V}\vec{q_2} &= \myvec{0 & 0 \\ 0 & 1}\myvec{1 \\ -2} = \myvec{0 \\ -2} \\
@@ -143,34 +142,48 @@ f &= 0
 \end{align}
 The tangent at $\vec{q_2}$ is:
 \begin{align}
-\myvec{-2 \\ -2}^{\top}\vec{x} - 2 &= 0 \\
--2x - 2y - 2 &= 0 \\
-x + y + 1 &= 0 \\
-y &= -x-1\label{eq:tangent2}
-\end{align}
+    \myvec{-2 \\ -2}^\top\vec{x} - 2 = 0\\
+    \myvec{1 \\ 1}^\top\vec{x}=-1\label{eq:tangent2}
+    \end{align}
+\end{frame}
+
+\begin{frame}{Solution}
+    Intersection of the two tangents:\\
+   From \ref{eq:tangent1} and \ref{eq:tangent2}:
+    \begin{align}
+     \myvec{-1 \\ 1}^\top\vec{x}=1\\
+    \myvec{1 \\ 1}^\top\vec{x}=-1\\
+    \myvec{-1 & 1 \\ 1 & 1}\vec{x}=\myvec{1\\-1}
+    \end{align}
+   \begin{align}
+   \myvec{
+   -1 & 1 & \vrule & 1\\ 1 & 1 & \vrule & -1 
+   }
+   \end{align}
+   $R_1\rightarrow -R_1$
+   \begin{align}
+   \myvec{
+   1 & -1 & \vrule & -1\\ 1 & 1 & \vrule & -1 
+   }\\
+   \end{align}
+\end{frame}
 \end{frame}
 
 \begin{frame}{Solution: Intersection of Tangents}
-We solve the system of linear equations from \ref{eq:tangent1} and \ref{eq:tangent2}:
-\begin{align*}
-y &= x+1 \\
-y &= -x-1
-\end{align*}
-Equating the right-hand sides:
-\begin{align*}
-x+1 &= -x-1 \\
-2x &= -2 \\
-x &= -1
-\end{align*}
-Substitute $x=-1$ into the first equation:
-\begin{align*}
-y &= (-1) + 1 = 0
-\end{align*}
+$R_2\rightarrow R_2-R_1$
+   \begin{align}
+   \myvec{
+   1 & -1 & \vrule & -1\\ 0 & 2 & \vrule & 0
+   }\\
+   \end{align}
+   $R_2\rightarrow R_2/2$, $R_1\rightarrow R_1+R_2$
+   \begin{align}
+   \myvec{
+   1 & 0 & \vrule & -1\\ 0 & 1 & \vrule & 0
+   }\\
+   \vec{x}=\myvec{-1\\0}
+   \end{align}
 Therefore, the point of intersection is $\myvec{-1 \\ 0}$.
-\end{frame}
-
-\begin{frame}{Solution: Final Answer}
-The point of intersection of the tangents at the ends of the latus rectum of the parabola $y^2 = 4x$ is $\boxed{(-1, 0)}$.
 \end{frame}
 
 \begin{frame}[fragile]
