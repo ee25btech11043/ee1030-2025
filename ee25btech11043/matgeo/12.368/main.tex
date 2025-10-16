@@ -1,0 +1,86 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern}
+\usepackage{tfrupee}
+\setlength{\headheight}{1cm}
+\setlength{\headsep}{0mm}
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\def\inputGnumericTable{}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+\usepackage{lscape}
+\usepackage{xparse}
+
+\bibliographystyle{IEEEtran}
+
+\title{12.368}
+\author{EE25BTECH11043 - Nishid Khandagre}
+
+\begin{document}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+
+\textbf{Question}:
+If the nullity of the matrix
+$\myvec{k & 1 & 2 \\ 1 & -1 & -2 \\ 1 & 1 & 4}$
+is 1, then the value of k is ?
+
+\textbf{Solution: }
+\begin{align}
+\vec{A}=\myvec{k & 1 & 2 \\ 1 & -1 & -2 \\ 1 & 1 & 4}
+\end{align}
+Nullity = 1 for a $3 \times 3$ matrix means $\operatorname{rank}(A)=2$.\\ \\
+Perform row operations:
+
+Swap $R_1$ and $R_2$:
+\begin{align}
+\myvec{1 & -1 & -2 \\ k & 1 & 2 \\ 1 & 1 & 4}
+\end{align}
+
+$R_2 \rightarrow R_2 - kR_1$, $R_3 \rightarrow R_3 - R_1$:
+\begin{align}
+\myvec{1 & -1 & -2 \\ 0 & 1+k & 2+2k \\ 0 & 2 & 6}
+\end{align}
+
+For the rank to be 2, the last two rows must be linearly dependent.
+Thus, there exists a scalar $t$ such that:
+\begin{align}
+1+k &= 2t \\
+2+2k &= 6t
+\end{align}
+\begin{align}
+2+2k &= 3+3k \\
+k &= -1
+\end{align}
+
+Thus, the value of $k$ is $-1$.
+
+\end{document}
