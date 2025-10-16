@@ -40,26 +40,12 @@ void calculate_angles_cosines(double ax, double ay, double az,
 
     // Calculate cosines of angles
     // Handle potential division by zero for zero vectors
-    if (mag_A > 1e-9 && mag_R > 1e-9) {
         cos_angle_result[0] = dot_R_A / (mag_R * mag_A);
-    } else {
-        // If A or R is a zero vector, special handling.
-        // If both are zero, angle can be considered 0 (cos=1).
-        // If one is zero and other non-zero, angle is 90 (cos=0).
-        cos_angle_result[0] = (mag_A < 1e-9 && mag_R < 1e-9) ? 1.0 : 0.0;
-    }
 
-    if (mag_B > 1e-9 && mag_R > 1e-9) {
         cos_angle_result[1] = dot_R_B / (mag_R * mag_B);
-    } else {
-        cos_angle_result[1] = (mag_B < 1e-9 && mag_R < 1e-9) ? 1.0 : 0.0;
-    }
-
-    if (mag_C > 1e-9 && mag_R > 1e-9) {
+  
         cos_angle_result[2] = dot_R_C / (mag_R * mag_C);
-    } else {
-        cos_angle_result[2] = (mag_C < 1e-9 && mag_R < 1e-9) ? 1.0 : 0.0;
-    }
+    
 }
 int main() {
     double ax, ay, az;
