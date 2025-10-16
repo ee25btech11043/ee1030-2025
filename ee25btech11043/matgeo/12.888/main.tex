@@ -1,0 +1,128 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern}
+\usepackage{tfrupee}
+\setlength{\headheight}{1cm}
+\setlength{\headsep}{0mm}
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\def\inputGnumericTable{}
+\usepackage[latin1]{inputenc}
+\usepackage{color}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+\usepackage{lscape}
+\usepackage{xparse}
+
+\bibliographystyle{IEEEtran}
+
+\title{12.888}
+\author{EE25BTECH11043 - Nishid Khandagre}
+\begin{document}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+
+\textbf{Question}:\
+Which one of the following matrices has eigenvalues 1 and 6?
+
+\begin{itemize}
+\item a)$\myvec{5&-2\\-2&2}$
+\item b)$\myvec{3&-1\\-2&2}$
+\item c)$\myvec{3&-1\\-1&2}$
+\item d)$\myvec{2&-1\\-1&3}$
+\end{itemize}
+
+\textbf{Solution: }
+
+To find the eigenvalues $\lambda$ of a matrix $\vec{M}$, we solve the characteristic equation 
+\begin{align}
+\det\myvec{\vec{M} - \lambda \vec{I}} = 0
+\end{align}
+
+For $\vec{A}=\myvec{5 & -2 \\ -2 & 2}$
+\begin{align}
+\det\myvec{\vec{A} - \lambda \vec{I}} &= \mydet{
+5-\lambda & -2\\
+-2 & 2-\lambda
+} \\
+&= (5-\lambda)(2-\lambda)-(-2)(-2) \\
+&= \lambda^2 - 7\lambda + 6 \\
+\end{align}
+\begin{align}
+\lambda^2 - 7\lambda + 6 &= 0 \\
+(\lambda - 1)(\lambda - 6) &= 0 \\
+\lambda &= 1, 6
+\end{align}
+The eigenvalues are 1 and 6. This matches the requirement.\\\\
+For $\vec{B}=\myvec{3 & -1 \\ -2 & 2}$
+\begin{align}
+\det\myvec{\vec{B} - \lambda \vec{I}} &= \mydet{
+3-\lambda & -1\\
+-2 & 2-\lambda
+} \\
+&= (3-\lambda)(2-\lambda)-(-1)(-2) \\
+&= \lambda^2 - 5\lambda + 4 \\
+\end{align}
+\begin{align}
+\lambda^2 - 5\lambda + 4 &= 0 \\
+(\lambda - 1)(\lambda - 4) &= 0 \\
+\lambda &= 1, 4
+\end{align}
+The eigenvalues are 1 and 4. This does not match the requirement.\\\\
+For $\vec{C}=\myvec{3 & -1 \\ -1 & 2}$
+\begin{align}
+\det\myvec{\vec{C} - \lambda \vec{I}} &= \mydet{
+3-\lambda & -1\\
+-1 & 2-\lambda
+} \\
+&= (3-\lambda)(2-\lambda)-(-1)(-1) \\
+&= \lambda^2 - 5\lambda + 5 \\
+\end{align}
+\begin{align}
+\lambda^2 - 5\lambda + 5 &= 0 \\
+\lambda &=\frac{5 \pm \sqrt{5}}{2}
+\end{align}
+The eigenvalues are $\frac{5 + \sqrt{5}}{2}$ and $\frac{5 - \sqrt{5}}{2}$. This does not match the requirement.\\\\
+For $\vec{D}=\myvec{2 & -1 \\ -1 & 3}$
+\begin{align}
+\det\myvec{\vec{D} - \lambda \vec{I}} &= \mydet{
+2-\lambda & -1\\
+-1 & 3-\lambda
+} \\
+&= (2-\lambda)(3-\lambda)-(-1)(-1) \\
+&= \lambda^2 - 5\lambda + 5 \\
+\end{align}
+\begin{align}
+\lambda^2 - 5\lambda + 5 &= 0 \\
+\lambda&= \frac{5 \pm \sqrt{5}}{2}
+\end{align}
+The eigenvalues are $\frac{5 + \sqrt{5}}{2}$ and $\frac{5 - \sqrt{5}}{2}$. This does not match the requirement.\\\\
+Only matrix $\vec{A}$ has eigenvalues 1 and 6.
+
+
+\end{document}
