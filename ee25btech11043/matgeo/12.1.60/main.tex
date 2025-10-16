@@ -1,0 +1,97 @@
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+\usepackage{lmodern}
+\usepackage{tfrupee}
+\setlength{\headheight}{1cm}
+\setlength{\headsep}{0mm}
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\def\inputGnumericTable{}
+\usepackage[latin1]{inputenc}
+\colorlet{punct}{red!60!black}
+\definecolor{background}{HTML}{EEEEEE}
+\definecolor{delim}{RGB}{20,105,176}
+\colorlet{sqbracket}{delim}
+\colorlet{comment}{green!50!black}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{calc}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{ifthen}
+\usepackage{lscape}
+\usepackage{xparse}
+
+\bibliographystyle{IEEEtran}
+
+\title{12.160}
+\author{EE25BTECH11043 - Nishid Khandagre}
+\begin{document}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+
+
+\textbf{Question}:\
+If $\vec{A}$ is square symmetric real valued matrix of dimension 2n, the eigenvalues of $\vec{A}$ are
+\begin{itemize}
+    \item a) 2n distinct real values numbers
+    \item b) 2n real values, not necessarily distinct
+    \item c) n distinct pairs of complex conjugate numbers
+    \item d) n pairs of complex conjugate numbers, not necessarily distinct
+\end{itemize}
+
+\textbf{Solution: }
+Let $\vec{A}$ be a real symmetric matrix of size $2n \times 2n$.
+\begin{align}
+    \vec{A} &= \vec{A}^T =\bar{A}^{\top}= \vec{A}^*
+\end{align}
+Let $\vec{v}$ be an eigenvector and $\lambda$ its eigenvalue:
+\begin{align}
+    \vec{A} \vec{v} &= \lambda \vec{v}
+\end{align}
+Take Hermitian inner product of both sides with $\vec{v}$:
+\begin{align}
+    \vec{v}^* \vec{A} \vec{v} &= \lambda \vec{v}^* \vec{v}
+\end{align}
+Since $\vec{A} = \vec{A}^*$:
+\begin{align}
+    \vec{v}^* \vec{A} \vec{v} &= (\vec{A} \vec{v})^* \vec{v} \\
+    &= (\lambda \vec{v})^* \vec{v} \\
+    &= \overline{\lambda} \vec{v}^* \vec{v}
+\end{align}
+Equating both expressions for $\vec{v}^* \vec{A} \vec{v}$:
+\begin{align}
+    \lambda \vec{v}^* \vec{v} &= \overline{\lambda} \vec{v}^* \vec{v}
+\end{align}
+Since $\vec{v}^* \vec{v} > 0$ (as $\vec{v}$ is an eigenvector, it must be non-zero):
+\begin{align}
+    \lambda &= \overline{\lambda} \\
+    \implies \lambda &\text{ is real.}
+\end{align}
+Therefore, All eigenvalues are real.\\
+$\vec{A}$ has 2n eigenvalues since its dimension is $2n \times 2n$.
+The eigenvalues may be repeated (not necessarily distinct).\\
+Therefore, the correct option is (b).
+
+\end{document}
