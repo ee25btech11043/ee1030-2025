@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  16 OCT 2025 23:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  17 OCT 2025 00:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2188,17 +2188,17 @@ dmap/pdftex.map}{/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts
 /enc/dvips/base/8r.enc}
 
 ]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[2]
-<figs/mat181.png, id=70, 613.5723pt x 545.6385pt>
+<figs/mat181.png, id=52, 613.5723pt x 545.6385pt>
 File: figs/mat181.png Graphic file (type png)
 <use figs/mat181.png>
 Package pdftex.def Info: figs/mat181.png  used on input line 138.
 (pdftex.def)             Requested size: 254.9356pt x 226.7105pt.
 
+Underfull \vbox (badness 2027) has occurred while \output is active []
+
+
+
+[2]
 
 [3 <./figs/mat181.png>] (./main.aux)
  ***********
@@ -2209,13 +2209,13 @@ Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 54452 strings out of 473190
- 1311219 string characters out of 5704335
- 1896494 words of memory out of 5000000
+ 54450 strings out of 473190
+ 1311193 string characters out of 5704335
+ 1896491 words of memory out of 5000000
  76857 multiletter control sequences out of 15000+600000
  624025 words of font info for 169 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
- 109i,14n,109p,1194b,1028s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 109i,14n,109p,1194b,1027s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/public/
 txfonts/rtxmi.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fon
 ts/type1/public/txfonts/rtxr.pfb></opt/homebrew/Cellar/texlive/20250308_1/share
@@ -2225,10 +2225,10 @@ ellar/texlive/20250308_1/share/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></op
 t/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/urw/times/utm
 r8a.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on main.pdf (3 pages, 96615 bytes).
+Output written on main.pdf (3 pages, 96375 bytes).
 PDF statistics:
- 118 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
- 30 named destinations out of 1000 (max. 500000)
+ 116 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
+ 28 named destinations out of 1000 (max. 500000)
  114 words of extra memory for PDF output out of 10000 (max. 10000000)
 
