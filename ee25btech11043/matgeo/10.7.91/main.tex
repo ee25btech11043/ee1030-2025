@@ -80,9 +80,9 @@ The tangent at a point $\vec{q}$ on the conic is given by the formula:
     \end{align}
     The tangent at $\vec{q_1}$ is: 
     \begin{align}
-    \myvec{-2 \\ 2}\vec{x} - 2 = 0
+    \myvec{-2 \\ 2}^\top\vec{x} - 2 = 0\\
+    \myvec{-1 \\ 1}^\top\vec{x}=1\label{eq:tangent1}
     \end{align}
-    y = x+1. \label{eq:tangent1}
 
     For $\vec{q_2} = \myvec{1 \\ -2}$:
     \begin{align}
@@ -93,27 +93,46 @@ The tangent at a point $\vec{q}$ on the conic is given by the formula:
     \end{align}
     The tangent at $\vec{q_2}$ is:
     \begin{align}
-    \myvec{-2 \\ -2}\vec{x} - 2 = 0
-     x + y + 1 = 0 \quad \Rightarrow \quad y = -x-1\label{eq:tangent2}
+    \myvec{-2 \\ -2}^\top\vec{x} - 2 = 0\\
+    \myvec{1 \\ 1}^\top\vec{x}=-1\label{eq:tangent2}
     \end{align}
       
       
     Intersection of the two tangents:\\
-    We solve the system of linear equations from \ref{eq:tangent1} and \ref{eq:tangent2}:
+   From \ref{eq:tangent1} and \ref{eq:tangent2}:
     \begin{align}
-    y &= x+1 \\
-    y &= -x-1
+     \myvec{-1 \\ 1}^\top\vec{x}=1\\
+    \myvec{1 \\ 1}^\top\vec{x}=-1\\
+    \myvec{-1 & 1 \\ 1 & 1}\vec{x}=\myvec{1\\-1}
     \end{align}
-    Equating the right-hand sides:
-    $x+1 = -x-1$
-    $2x = -2$
-    $x = -1$
-    Substitute $x=-1$ into the first equation:
-    $y = (-1) + 1 = 0$
+   \begin{align}
+   \myvec{
+   -1 & 1 & \vrule & 1\\ 1 & 1 & \vrule & -1 
+   }
+   \end{align}
+   $R_1\rightarrow -R_1$
+   \begin{align}
+   \myvec{
+   1 & -1 & \vrule & -1\\ 1 & 1 & \vrule & -1 
+   }\\
+   \end{align}
+   $R_2\rightarrow R_2-R_1$
+   \begin{align}
+   \myvec{
+   1 & -1 & \vrule & -1\\ 0 & 2 & \vrule & 0
+   }\\
+   \end{align}
 
-    Therefore, the point of intersection is $\myvec{-1 \\ 0}$.
+   $R_2\rightarrow R_2/2$, $R_1\rightarrow R_1+R_2$
+   \begin{align}
+   \myvec{
+   1 & 0 & \vrule & -1\\ 0 & 1 & \vrule & 0
+   }\\
+   \vec{x}=\myvec{-1\\0}
+   \end{align}
+   
+Therefore, the point of intersection is $\myvec{-1 \\ 0}$.
 
-The point of intersection of the tangents at the ends of the latus rectum of the parabola $y^2 = 4x$ is $\boxed{(-1, 0)}$.
 
 \begin{figure}[H]
 \centering
