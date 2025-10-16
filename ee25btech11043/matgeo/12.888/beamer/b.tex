@@ -1,0 +1,325 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{txfonts}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{gvv}
+\usepackage{lmodern}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\setbeamertemplate{page number in head/foot}[totalframenumber]
+
+\usepackage{tcolorbox}
+\tcbuselibrary{minted,breakable,xparse,skins}
+
+\definecolor{bg}{gray}{0.95}
+\DeclareTCBListing{mintedbox}{O{}m!O{}}{%
+breakable=true,
+listing engine=minted,
+listing only,
+minted language=#2,
+minted style=default,
+minted options={%
+linenos,
+gobble=0,
+breaklines=true,
+breakafter=,,
+fontsize=\small,
+numbersep=8pt,
+#1},
+boxsep=0pt,
+left skip=0pt,
+right skip=0pt,
+left=25pt,
+right=0pt,
+top=3pt,
+bottom=3pt,
+arc=5pt,
+leftrule=0pt,
+rightrule=0pt,
+bottomrule=2pt,
+toprule=2pt,
+colback=bg,
+colframe=orange!70,
+enhanced,
+overlay={%
+\begin{tcbclipinterior}
+\fill[orange!20!white] (frame.south west) rectangle ([xshift=20pt]frame.north west);
+\end{tcbclipinterior}},
+#3,
+}
+\lstset{
+language=C,
+basicstyle=\ttfamily\small,
+keywordstyle=\color{blue},
+stringstyle=\color{orange},
+commentstyle=\color{green!60!black},
+numbers=left,
+numberstyle=\tiny\color{gray},
+breaklines=true,
+showstringspaces=false,
+}
+
+\title
+{12.888}
+\date{October 10, 2025}
+\author
+{EE25BTECH11043 - Nishid Khandagre}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Question}
+Which one of the following matrices has eigenvalues 1 and 6?
+
+\begin{itemize}
+\item a)$\myvec{5&-2\\-2&2}$
+\item b)$\myvec{3&-1\\-2&2}$
+\item c)$\myvec{3&-1\\-1&2}$
+\item d)$\myvec{2&-1\\-1&3}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+To find the eigenvalues $\lambda$ of a matrix $\vec{M}$, we solve the characteristic equation 
+\begin{align}
+\det\myvec{\vec{M} - \lambda \vec{I}} = 0
+\end{align}
+
+For $\vec{A}=\myvec{5 & -2 \\ -2 & 2}$
+\begin{align}
+\det\myvec{\vec{A} - \lambda \vec{I}} &= \mydet{
+5-\lambda & -2\\
+-2 & 2-\lambda
+} \\
+&= (5-\lambda)(2-\lambda)-(-2)(-2)
+\end{align}
+\begin{align}
+&= \lambda^2 - 7\lambda + 6
+\end{align}
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+Now, we solve the characteristic equation:
+\begin{align}
+\lambda^2 - 7\lambda + 6 &= 0 \\
+(\lambda - 1)(\lambda - 6) &= 0 \\
+\lambda &= 1, 6
+\end{align}
+The eigenvalues are 1 and 6. This matches the requirement.
+
+For $\vec{B}=\myvec{3 & -1 \\ -2 & 2}$
+\begin{align}
+\det\myvec{\vec{B} - \lambda \vec{I}} &= \mydet{
+3-\lambda & -1\\
+-2 & 2-\lambda
+} \\
+&= (3-\lambda)(2-\lambda)-(-1)(-2) \\
+&= \lambda^2 - 5\lambda + 4
+\end{align}
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+\begin{align}
+\lambda^2 - 5\lambda + 4 &= 0 \\
+(\lambda - 1)(\lambda - 4) &= 0 \\
+\lambda &= 1, 4
+\end{align}
+The eigenvalues are 1 and 4. This does not match the requirement.
+
+For $\vec{C}=\myvec{3 & -1 \\ -1 & 2}$
+\begin{align}
+\det\myvec{\vec{C} - \lambda \vec{I}} &= \mydet{
+3-\lambda & -1\\
+-1 & 2-\lambda
+} \\
+&= (3-\lambda)(2-\lambda)-(-1)(-1) \\
+&= \lambda^2 - 5\lambda + 5
+\end{align}
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+\begin{align}
+\lambda^2 - 5\lambda + 5 &= 0 \\
+\lambda &=\frac{5 \pm \sqrt{5}}{2}
+\end{align}
+The eigenvalues are $\frac{5 + \sqrt{5}}{2}$ and $\frac{5 - \sqrt{5}}{2}$. This does not match the requirement.
+
+For $\vec{D}=\myvec{2 & -1 \\ -1 & 3}$
+\begin{align}
+\det\myvec{\vec{D} - \lambda \vec{I}} &= \mydet{
+2-\lambda & -1\\
+-1 & 3-\lambda
+} \\
+&= (2-\lambda)(3-\lambda)-(-1)(-1) \\
+&= \lambda^2 - 5\lambda + 5
+\end{align}
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+\begin{align}
+\lambda^2 - 5\lambda + 5 &= 0 \\
+\lambda&= \frac{5 \pm \sqrt{5}}{2}
+\end{align}
+The eigenvalues are $\frac{5 + \sqrt{5}}{2}$ and $\frac{5 - \sqrt{5}}{2}$. This does not match the requirement.
+\\\\
+Only matrix $\vec{A}$ has eigenvalues 1 and 6.
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{C Code}
+\begin{lstlisting}[language=C]
+#include <math.h>
+#include <stdio.h>
+
+// Function to find eigenvalues of a 2x2 matrix
+// mat = [[a, b], [c, d]]
+// Returns 0 if real eigenvalues are found, -1 if complex
+int findEigenvalues(double a, double b, double c, double d, double *lambda1, double *lambda2) {
+    double trace = a + d;
+    double det = a * d - b * c;
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{C Code}
+\begin{lstlisting}[language=C]
+    // Characteristic equation: lambda^2 - (trace)lambda + (det) = 0
+    // Using quadratic formula: lambda = (-B ± sqrt(B^2 - 4AC)) / 2A
+    // Here A=1, B=-trace, C=det
+    double discriminant = trace * trace - 4 * det;
+
+    if (discriminant >= 0) {
+        *lambda1 = (trace + sqrt(discriminant)) / 2.0;
+        *lambda2 = (trace - sqrt(discriminant)) / 2.0;
+        return 0; // Real eigenvalues
+    } else {
+        // Complex eigenvalues (not relevant for this problem, but good to handle)
+        return -1; // Complex eigenvalues
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Python Code using C Shared Output}
+\begin{lstlisting}[language=Python]
+import ctypes
+import numpy as np
+
+# Load the shared library
+lib_eigen = ctypes.CDLL("./code27.so")
+
+# Define the argument types and return type for the C function
+lib_eigen.findEigenvalues.argtypes = [
+    ctypes.c_double, # a
+    ctypes.c_double, # b
+    ctypes.c_double, # c
+    ctypes.c_double, # d
+    ctypes.POINTER(ctypes.c_double), # lambda1
+    ctypes.POINTER(ctypes.c_double)  # lambda2
+]
+lib_eigen.findEigenvalues.restype = ctypes.c_int 
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Python Code using C Shared Output}
+\begin{lstlisting}[language=Python]
+# Given target eigenvalues
+target_eigenvalues = {1.0, 6.0}
+
+matrices = {
+    "a": np.array([[5, -2], [-2, 2]], dtype=float),
+    "b": np.array([[3, -1], [-2, 2]], dtype=float),
+    "c": np.array([[3, -1], [-1, 2]], dtype=float),
+    "d": np.array([[2, -1], [-1, 3]], dtype=float)
+}
+
+print("Checking matrices for eigenvalues 1 and 6:\n")
+for label, mat in matrices.items():
+    a, b = mat[0, 0], mat[0, 1]
+    c, d = mat[1, 0], mat[1, 1]
+
+    lambda1_result = ctypes.c_double()
+    lambda2_result = ctypes.c_double()
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Python Code using C Shared Output}
+\begin{lstlisting}[language=Python]
+    # Call the C function
+    status = lib_eigen.findEigenvalues(
+        a, b, c, d,
+        ctypes.byref(lambda1_result),
+        ctypes.byref(lambda2_result)
+    )
+    if status == 0:
+        found_eigenvalues = {round(lambda1_result.value, 6), round(lambda2_result.value, 6)}
+        print(f"Matrix {label}:\n{mat}")
+        print(f"  Calculated eigenvalues: {found_eigenvalues}")
+        if found_eigenvalues == target_eigenvalues:
+            print("  This matrix has eigenvalues 1 and 6!\n")
+        else:
+            print("  Eigenvalues do not match 1 and 6.\n")
+    else:
+        print(f"Matrix {label}:\n{mat}")
+        print("Could not find real eigenvalues")
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Python Code: Direct}
+\begin{lstlisting}[language=Python]
+import numpy as np
+
+def check_eigenvalues(matrix, target_eigenvalues):
+    """
+    Calculates the eigenvalues of a 2x2 matrix and checks if they match
+    the target eigenvalues.
+    """
+    eigenvalues, _ = np.linalg.eig(matrix)
+
+    calculated_eigenvalues = set(round(val.real, 6) for val in eigenvalues)
+
+    return calculated_eigenvalues == target_eigenvalues, calculated_eigenvalues
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Python Code: Direct}
+\begin{lstlisting}[language=Python]
+# Define the target eigenvalues
+target_eigenvalues = {1.0, 6.0}
+
+# Define the matrices as NumPy arrays
+matrices = {
+    "a": np.array([[5, -2], [-2, 2]]),
+    "b": np.array([[3, -1], [-2, 2]]),
+    "c": np.array([[3, -1], [-1, 2]]),
+    "d": np.array([[2, -1], [-1, 3]])
+}
+
+print(f"Searching for a matrix with eigenvalues: {target_eigenvalues}\n")
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]\frametitle{Python Code: Direct}
+\begin{lstlisting}[language=Python]
+# Iterate through each matrix and check its eigenvalues
+for label, matrix in matrices.items():
+    print(f"Checking Matrix {label}:\n{matrix}")
+    match, calculated_eigs = check_eigenvalues(matrix, target_eigenvalues)
+
+    if match:
+        print(f"  Result: This matrix has the target eigenvalues {calculated_eigs}!\n")
+    else:
+        print(f"  Result: Calculated eigenvalues are {calculated_eigs}, which do NOT match the target.\n")
+\end{lstlisting}
+\end{frame}
+
+\end{document}
