@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  16 OCT 2025 23:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  17 OCT 2025 00:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1762,8 +1762,7 @@ LaTeX Font Info:    Trying to load font information for OT1+lmss on input line
 (/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/lm/ot1lmss.
 fd
 File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-No file b.aux.
+) (./b.aux)
 \openout1 = `b.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 80.
@@ -1875,6 +1874,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 Package hyperref Info: Link coloring OFF on input line 80.
+ (./b.out) (./b.out)
 \@outlinefile=\write6
 \openout6 = `b.out'.
 
@@ -1950,9 +1950,7 @@ translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
 \c@lstlisting=\count420
-
-No file b.nav.
-
+ (./b.nav)
 
 [1
 
@@ -2033,32 +2031,16 @@ LaTeX Font Info:    Font shape `OT1/lmss/m/it' in size <6> not available
 
 {/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/lm/lm
 -mathsy.enc}]
+<../figs/fig.jpg, id=88, 500.87125pt x 526.96875pt>
+File: ../figs/fig.jpg Graphic file (type jpg)
+<use ../figs/fig.jpg>
+Package pdftex.def Info: ../figs/fig.jpg  used on input line 95.
+(pdftex.def)             Requested size: 136.91603pt x 144.05244pt.
 
-LaTeX Warning: File `figs/fig.jpg' not found on input line 95.
-
-
-! Package pdftex.def Error: File `figs/fig.jpg' not found: using draft setting.
-
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.95 \end{frame}
-                
-? 
-LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-95.
-
-(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/lm/ot1lmtt.
-fd
-File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
 
 [3
 
-{/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/lm/lm
--rmtt.enc}]
+ <../figs/fig.jpg>]
 
 [4
 
@@ -2085,11 +2067,19 @@ LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <6> not available
 ]
 \openout4 = `b.vrb'.
 
- (./b.vrb)
+ (./b.vrb
+LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
+2.
+
+(/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/tex/latex/lm/ot1lmtt.
+fd
+File: ot1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+))
 
 [7
 
-]
+{/opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/enc/dvips/lm/lm
+-rmtt.enc}]
 \openout4 = `b.vrb'.
 
  (./b.vrb)
@@ -2201,29 +2191,22 @@ l.13 ...orce F is (in N): {force_F_magnitude:.3f}"
 \tf@snm=\write9
 \openout9 = `b.snm'.
 
+runsystem(latexminted cleantemp  --timestamp 20251017002106 92EB5FFEE6AE2FEC3AD
+71C777531578F)...executed safely (allowed).
+
  (./b.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2020/03/25>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `b.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `b.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `b.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 59227 strings out of 473190
- 1455445 string characters out of 5704335
- 2529403 words of memory out of 5000000
- 81479 multiletter control sequences out of 15000+600000
+ 59242 strings out of 473190
+ 1455243 string characters out of 5704335
+ 2529401 words of memory out of 5000000
+ 81486 multiletter control sequences out of 15000+600000
  600199 words of font info for 77 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  128i,19n,123p,1169b,1426s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -2239,10 +2222,10 @@ so10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/
 public/lm/lmsy10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/
 fonts/type1/public/lm/lmsy8.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/
 texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on b.pdf (11 pages, 170962 bytes).
+Output written on b.pdf (11 pages, 179264 bytes).
 PDF statistics:
- 398 PDF objects out of 1000 (max. 8388607)
+ 399 PDF objects out of 1000 (max. 8388607)
  332 compressed objects within 4 object streams
  24 named destinations out of 1000 (max. 500000)
- 79 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 84 words of extra memory for PDF output out of 10000 (max. 10000000)
 
