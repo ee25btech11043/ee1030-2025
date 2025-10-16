@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  17 OCT 2025 00:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025/Homebrew) (preloaded format=pdflatex 2025.3.15)  17 OCT 2025 00:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2032,18 +2032,10 @@ LaTeX Font Info:    Font shape `OT1/lmss/b/n' in size <6> not available
 [5
 
 ]
-Overfull \vbox (18.95786pt too high) detected at line 132
- []
-
-
 
 [6
 
 ]
-Overfull \vbox (18.95786pt too high) detected at line 147
- []
-
-
 
 [7
 
@@ -2055,7 +2047,7 @@ Overfull \vbox (18.95786pt too high) detected at line 147
 ! Too many }'s.
 \endframe ->\egroup 
                     \begingroup \def \@currenvir {frame}
-l.168 \end{frame}
+l.170 \end{frame}
                  
 ? 
 
@@ -2106,7 +2098,7 @@ l.8 .../nishidkhandagre/matgeo/venv/bin/code18.so"
                                                   )
 ? 
 )
-Overfull \vbox (1.72923pt too high) detected at line 227
+Overfull \vbox (1.72923pt too high) detected at line 229
  []
 
 
@@ -2159,7 +2151,7 @@ l.18 ...ntersection_x:.2f}, {intersection_y:.2f})"
                                                   )
 ? 
 )
-Overfull \vbox (1.72923pt too high) detected at line 249
+Overfull \vbox (1.72923pt too high) detected at line 251
  []
 
 
@@ -2170,7 +2162,7 @@ Overfull \vbox (1.72923pt too high) detected at line 249
 \openout4 = `b.vrb'.
 
  (./b.vrb)
-Overfull \vbox (1.72923pt too high) detected at line 272
+Overfull \vbox (1.72923pt too high) detected at line 274
  []
 
 
@@ -2210,7 +2202,7 @@ l.9 ...', (a_value, 0), textcoords="offset points"
                                                   , xytext=(5,5), ha='left')
 ? 
 )
-Overfull \vbox (1.72923pt too high) detected at line 290
+Overfull \vbox (1.72923pt too high) detected at line 292
  []
 
 
@@ -2295,7 +2287,7 @@ l.5 ...intersection_y), textcoords="offset points"
 
 ? 
 )
-Overfull \vbox (13.72923pt too high) detected at line 323
+Overfull \vbox (13.72923pt too high) detected at line 325
  []
 
 
@@ -2306,7 +2298,7 @@ Overfull \vbox (13.72923pt too high) detected at line 323
 \openout4 = `b.vrb'.
 
  (./b.vrb)
-Overfull \vbox (1.72923pt too high) detected at line 346
+Overfull \vbox (1.72923pt too high) detected at line 348
  []
 
 
@@ -2489,10 +2481,10 @@ l.13 ...ntersection_y), textcoords="offset points"
 <../figs/mat181.png, id=684, 613.5723pt x 545.6385pt>
 File: ../figs/mat181.png Graphic file (type png)
 <use ../figs/mat181.png>
-Package pdftex.def Info: ../figs/mat181.png  used on input line 459.
+Package pdftex.def Info: ../figs/mat181.png  used on input line 461.
 (pdftex.def)             Requested size: 273.83728pt x 243.52022pt.
 
-Overfull \vbox (21.5845pt too high) detected at line 459
+Overfull \vbox (21.5845pt too high) detected at line 461
  []
 
 
@@ -2502,7 +2494,7 @@ Overfull \vbox (21.5845pt too high) detected at line 459
  <../figs/mat181.png>]
 File: ../figs/mat181.png Graphic file (type png)
 <use ../figs/mat181.png>
-Package pdftex.def Info: ../figs/mat181.png  used on input line 468.
+Package pdftex.def Info: ../figs/mat181.png  used on input line 470.
 (pdftex.def)             Requested size: 239.60567pt x 213.0729pt.
 
 
@@ -2518,7 +2510,7 @@ Package pdftex.def Info: ../figs/mat181.png  used on input line 468.
 \tf@snm=\write9
 \openout9 = `b.snm'.
 
-runsystem(latexminted cleantemp  --timestamp 20251017000845 92EB5FFEE6AE2FEC3AD
+runsystem(latexminted cleantemp  --timestamp 20251017001623 92EB5FFEE6AE2FEC3AD
 71C777531578F)...executed safely (allowed).
 
  (./b.aux)
@@ -2549,7 +2541,7 @@ so10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/fonts/type1/
 public/lm/lmsy10.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/texmf-dist/
 fonts/type1/public/lm/lmsy8.pfb></opt/homebrew/Cellar/texlive/20250308_1/share/
 texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on b.pdf (25 pages, 256357 bytes).
+Output written on b.pdf (25 pages, 256517 bytes).
 PDF statistics:
  806 PDF objects out of 1000 (max. 8388607)
  697 compressed objects within 7 object streams
