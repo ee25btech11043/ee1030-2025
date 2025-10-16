@@ -1,0 +1,14 @@
+\frametitle{Python Code (Direct)}
+\begin{lstlisting}
+x_CT2 = line_gen_num(C, T2, 20)
+plt.plot(x_CT2[0,:], x_CT2[1,:], "c:", label="Radius CT2")
+
+plt.xlabel('$x$')
+plt.ylabel('$y$')
+plt.legend(loc='upper left', bbox_to_anchor=(1, 1))
+plt.grid(True, linestyle='--')
+plt.title("Construction of Tangents to a Circle")
+plt.axis('equal')
+plt.tight_layout()
+plt.show()
+\end{lstlisting}

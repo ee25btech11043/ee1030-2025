@@ -1,0 +1,14 @@
+\frametitle{Pure Python Code}
+\begin{lstlisting}[language=Python]
+force_F = weight * math.tan(angle_radians)
+return force_F
+
+# Given values from the problem
+weight_ball = 100.0  # N
+angle_string_vertical = 30.0 # degrees
+
+# Calculate the force using the pure Python function
+force_F_magnitude = calculate_horizontal_force_pure_python(weight_ball, angle_string_vertical)
+
+print(f"The magnitude of force F is (in N): {force_F_magnitude:.3f}")
+\end{lstlisting}

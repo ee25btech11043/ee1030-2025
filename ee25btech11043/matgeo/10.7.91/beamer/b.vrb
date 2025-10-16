@@ -1,0 +1,15 @@
+\frametitle{Python Code : Direct}
+\begin{lstlisting}[language=Python]
+# --- Plot Aesthetics ---
+plt.xlim(-3, 6)
+plt.ylim(-4, 4)
+plt.gca().set_aspect('equal', adjustable='box')
+plt.xlabel('X-axis')
+plt.ylabel('Y-axis')
+plt.title('Parabola, Latus Rectum, Tangents, and Intersection Point')
+plt.grid(True)
+plt.legend()
+plt.axhline(0, color='gray', linewidth=0.5)
+plt.axvline(0, color='gray', linewidth=0.5)
+plt.show()
+\end{lstlisting}

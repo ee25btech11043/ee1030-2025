@@ -1,0 +1,13 @@
+\frametitle{Python Code (Pure Python)}
+\begin{lstlisting}{python}
+    print(f"   Rank of the matrix: {rank}")
+    print(f"   Nullity of the matrix (columns - rank): {nullity}\n")
+
+    if nullity == 1:
+        print(f"Conclusion: The value of k that results in a nullity of 1 is: {k_solution:.0f}")
+    else:
+        print("Conclusion: The calculated k did not result in a nullity of 1.")
+
+# Run the solver
+solve_matrix_problem_pure_python()
+\end{lstlisting}

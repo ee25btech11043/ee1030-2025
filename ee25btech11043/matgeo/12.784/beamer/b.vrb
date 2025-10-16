@@ -1,0 +1,12 @@
+\frametitle{Python Code (Pure Python Solution)}
+\begin{lstlisting}[language=Python]
+    # 4. Calculate the final sum: a11 + a21 + a31 + m
+    final_sum = a11 + a21 + a31 + m
+
+    print(f"\n--- Final Result ---")
+    print(f"a11 + a21 + a31 + m = {final_sum:.2f}")
+    return final_sum
+
+if __name__ == "__main__":
+    solve_matrix_problem_pure_python()
+\end{lstlisting}

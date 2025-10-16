@@ -1,0 +1,12 @@
+\frametitle{Python Code: Direct}
+\begin{lstlisting}[language=Python]
+# Iterate through each matrix and check its eigenvalues
+for label, matrix in matrices.items():
+    print(f"Checking Matrix {label}:\n{matrix}")
+    match, calculated_eigs = check_eigenvalues(matrix, target_eigenvalues)
+
+    if match:
+        print(f"  Result: This matrix has the target eigenvalues {calculated_eigs}!\n")
+    else:
+        print(f"  Result: Calculated eigenvalues are {calculated_eigs}, which do NOT match the target.\n")
+\end{lstlisting}
