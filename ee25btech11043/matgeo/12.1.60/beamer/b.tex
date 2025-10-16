@@ -1,0 +1,133 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{txfonts}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{gvv}
+\usepackage{lmodern}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\setbeamertemplate{page number in head/foot}[totalframenumber]
+
+\usepackage{tcolorbox}
+\tcbuselibrary{minted,breakable,xparse,skins}
+
+\definecolor{bg}{gray}{0.95}
+\DeclareTCBListing{mintedbox}{O{}m!O{}}{%
+breakable=true,
+listing engine=minted,
+listing only,
+minted language=#2,
+minted style=default,
+minted options={%
+linenos,
+gobble=0,
+breaklines=true,
+breakafter=,,
+fontsize=\small,
+numbersep=8pt,
+#1},
+boxsep=0pt,
+left skip=0pt,
+right skip=0pt,
+left=25pt,
+right=0pt,
+top=3pt,
+bottom=3pt,
+arc=5pt,
+leftrule=0pt,
+rightrule=0pt,
+bottomrule=2pt,
+toprule=2pt,
+colback=bg,
+colframe=orange!70,
+enhanced,
+overlay={%
+\begin{tcbclipinterior}
+\fill[orange!20!white] (frame.south west) rectangle ([xshift=20pt]frame.north west);
+\end{tcbclipinterior}},
+#3,
+}
+\lstset{
+language=C,
+basicstyle=\ttfamily\small,
+keywordstyle=\color{blue},
+stringstyle=\color{orange},
+commentstyle=\color{green!60!black},
+numbers=left,
+numberstyle=\tiny\color{gray},
+breaklines=true,
+showstringspaces=false,
+}
+
+\title
+{12.160}
+\date{October 8, 2025}
+\author
+{EE25BTECH11043 - Nishid Khandagre}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Question}
+If $\vec{A}$ is square symmetric real valued matrix of dimension 2n, the eigenvalues of $\vec{A}$ are
+\begin{itemize}
+    \item a) 2n distinct real values numbers
+    \item b) 2n real values, not necessarily distinct
+    \item c) n distinct pairs of complex conjugate numbers
+    \item d) n pairs of complex conjugate numbers, not necessarily distinct
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+\textbf{Solution: }
+Let $\vec{A}$ be a real symmetric matrix of size $2n \times 2n$.
+\begin{align}
+    \vec{A} &= \vec{A}^T = \vec{A}^*
+\end{align}
+Let $\vec{v}$ be an eigenvector and $\lambda$ its eigenvalue:
+\begin{align}
+    \vec{A} \vec{v} &= \lambda \vec{v}
+\end{align}
+Take Hermitian inner product of both sides with $\vec{v}$:
+\begin{align}
+    \vec{v}^* \vec{A} \vec{v} &= \lambda \vec{v}^* \vec{v}
+\end{align}
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+Since $\vec{A} = \vec{A}^*$:
+\begin{align}
+    \vec{v}^* \vec{A} \vec{v} &= (\vec{A} \vec{v})^* \vec{v} \\
+    &= (\lambda \vec{v})^* \vec{v} \\
+    &= \overline{\lambda} \vec{v}^* \vec{v}
+\end{align}
+Equating both expressions for $\vec{v}^* \vec{A} \vec{v}$:
+\begin{align}
+    \lambda \vec{v}^* \vec{v} &= \overline{\lambda} \vec{v}^* \vec{v}
+\end{align}
+Since $\vec{v}^* \vec{v} > 0$ (as $\vec{v}$ is an eigenvector, it must be non-zero):
+\begin{align}
+    \lambda &= \overline{\lambda} \\
+    \implies \lambda &\text{ is real.}
+\end{align}
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+Therefore, All eigenvalues are real.\\\\
+$\vec{A}$ has 2n eigenvalues since its dimension is $2n \times 2n$.
+The eigenvalues may be repeated (not necessarily distinct).\\\\
+Therefore, the correct option is (b).
+\end{frame}
+
+\end{document}
