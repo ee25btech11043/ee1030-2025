@@ -1,0 +1,289 @@
+\documentclass{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Madrid}
+\usecolortheme{default}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{txfonts}
+\usepackage{tkz-euclide}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{gvv}
+\usepackage{lmodern}
+\usepackage{circuitikz}
+\usepackage{tikz}
+\usepackage{graphicx}
+\setbeamertemplate{page number in head/foot}[totalframenumber]
+\usepackage{tcolorbox}
+\tcbuselibrary{minted,breakable,xparse,skins}
+\definecolor{bg}{gray}{0.95}
+\DeclareTCBListing{mintedbox}{O{}m!O{}}{%
+breakable=true,
+listing engine=minted,
+listing only,
+minted language=#2,
+minted style=default,
+minted options={%
+linenos,
+gobble=0,
+breaklines=true,
+breakafter=,,
+fontsize=\small,
+numbersep=8pt,
+#1},
+boxsep=0pt,
+left skip=0pt,
+right skip=0pt,
+left=25pt,
+right=0pt,
+top=3pt,
+bottom=3pt,
+arc=5pt,
+leftrule=0pt,
+rightrule=0pt,
+bottomrule=2pt,
+toprule=2pt,
+colback=bg,
+colframe=orange!70,
+enhanced,
+overlay={%
+\begin{tcbclipinterior}
+\fill[orange!20!white] (frame.south west) rectangle ([xshift=20pt]frame.north west);
+\end{tcbclipinterior}},
+#3,
+}
+\lstset{
+language=C,
+basicstyle=\ttfamily\small,
+keywordstyle=\color{blue},
+stringstyle=\color{orange},
+commentstyle=\color{green!60!black},
+numbers=left,
+numberstyle=\tiny\color{gray},
+breaklines=true,
+showstringspaces=false,
+}
+
+\title
+{12.680}
+\date{October 10, 2025}
+\author
+{EE25BTECH11043 - Nishid Khandagre}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}{Question}
+The rank of matrix is ?
+\begin{align*}
+\myvec{
+1 & 2 & 2 & 3\\
+3 & 4 & 2 & 5\\
+5 & 6 & 2 & 7\\
+7 & 8 & 2 & 9
+}
+\end{align*}
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+Let the given matrix be $\vec{A}$:
+\begin{align}
+\vec{A}=\myvec{
+1 & 2 & 2 & 3\\
+3 & 4 & 2 & 5\\
+5 & 6 & 2 & 7\\
+7 & 8 & 2 & 9
+}
+\end{align}
+
+$R_2 \rightarrow R_2-3R_1$ , $R_3 \rightarrow R_3-5R_1$ , $R_4 \rightarrow R_4-7R_1$
+    \begin{align}
+    \myvec{
+    1 & 2 & 2 & 3\\
+    0 & -2 & -4 & -4\\
+    0 & -4 & -8 & -8\\
+    0 & -6 & -12 & -12
+    }
+    \end{align}
+\end{frame}
+
+\begin{frame}{Theoretical Solution}
+$R_2 \rightarrow -\frac{1}{2}R_2$ 
+    \begin{align}
+    \myvec{
+    1 & 2 & 2 & 3\\
+    0 & 1 & 2 & 2\\
+    0 & -4 & -8 & -8\\
+    0 & -6 & -12 & -12
+    }
+    \end{align}
+
+$R_3 \rightarrow R_3+4R_2$ , $R_4 \rightarrow R_4+6R_2$ , $R_1 \rightarrow R_1-2R_2$
+    \begin{align}
+    \myvec{
+    1 & 0 & -2 & -1\\
+    0 & 1 & 2 & 2\\
+    0 & 0 & 0 & 0\\
+    0 & 0 & 0 & 0
+    }
+    \end{align}
+The number of non-zero rows (pivot rows) in the row-echelon form is 2.
+Therefore, the rank of the matrix $A$ is 2.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{C Code}
+\begin{lstlisting}[language=C]
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+// Function to swap two rows in a matrix
+void swapRows(int *matrix, int r1, int r2, int cols) {
+    for (int j = 0; j < cols; j++) {
+        int temp = *(matrix + r1 * cols + j);
+        *(matrix + r1 * cols + j) = *(matrix + r2 * cols + j);
+        *(matrix + r2 * cols + j) = temp;
+    }
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{C Code}
+\begin{lstlisting}[language=C]
+// Function to calculate the rank of a matrix
+int calculate_rank(int *matrix, int rows, int cols) {
+    int rank = 0;
+    int lead = 0; // Current column to process
+
+    for (int r = 0; r < rows && lead < cols; r++) {
+        int i = r;
+//Find a row with a non-zero element in the current column 'lead'
+    while (i < rows && *(matrix + i * cols + lead) == 0) {
+        i++;
+    }
+    if (i == rows) {
+        // No pivot found in this column, move to the next column
+        lead++;
+        r--; // Re-process the current row with the new lead column
+        continue;
+        }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{C Code}
+\begin{lstlisting}[language=C]
+        // Swap the current row with the pivot row
+        swapRows(matrix, r, i, cols);
+        // Eliminate other rows
+        for (i = 0; i < rows; i++) {
+            if (i != r) {
+                int factor = *(matrix + i * cols + lead);
+                int pivot_val = *(matrix + r * cols + lead);
+
+                if (pivot_val == 0) continue;
+                for (int j = lead; j < cols; j++) {
+                    *(matrix + i * cols + j) = (pivot_val * *(matrix + i * cols + j)) - (factor * *(matrix + r * cols + j));
+                }
+            }
+        }
+        lead++;
+    }
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{C Code}
+\begin{lstlisting}[language=C]
+    // Count non-zero rows (each non-zero row indicates a pivot)
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            if (*(matrix + i * cols + j) != 0) {
+                rank++;
+                break; // Found a non-zero element in this row, move to the next row
+            }
+        }
+    }
+    return rank;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Python Code (using C shared library)}
+\begin{lstlisting}[language=Python]
+import ctypes
+import numpy as np
+
+# Load the shared library
+lib_code = ctypes.CDLL("./code25.so")
+
+# Define the argument types and return type for the C function
+lib_code.calculate_rank.argtypes = [
+    ctypes.POINTER(ctypes.c_int), # matrix_ptr (flattened 2D array)
+    ctypes.c_int,                  # rows
+    ctypes.c_int                   # cols
+]
+lib_code.calculate_rank.restype = ctypes.c_int
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Python Code (using C shared library)}
+\begin{lstlisting}[language=Python]
+# The matrix from the image
+matrix_data = [
+    [1, 2, 2, 3],
+    [3, 4, 2, 5],
+    [5, 6, 2, 7],
+    [7, 8, 2, 9]
+]
+
+rows = len(matrix_data)
+cols = len(matrix_data[0])
+
+# Flatten the matrix into a 1D list for C compatibility
+flattened_matrix = [item for sublist in matrix_data for item in sublist]
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Python Code (using C shared library)}
+\begin{lstlisting}[language=Python]
+# Convert the flattened list to a C-compatible array
+C_int_array = ctypes.c_int * (rows * cols)
+c_matrix = C_int_array(*flattened_matrix)
+
+# Call the C function to calculate the rank
+rank = lib_code.calculate_rank(c_matrix, rows, cols)
+
+print(f"The rank of the matrix is: {rank}")
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Pure Python Code}
+\begin{lstlisting}[language=Python]
+import numpy as np  # <-- This line imports the numpy library
+
+# Define the matrix from the image
+matrix = np.array([
+    [1, 2, 2, 3],
+    [3, 4, 2, 5],
+    [5, 6, 2, 7],
+    [7, 8, 2, 9]
+])
+
+# Calculate the rank of the matrix using numpy's linear algebra module
+rank = np.linalg.matrix_rank(matrix) 
+
+print(f"The given matrix is:\n{matrix}")
+print(f"The rank of the matrix is: {rank}")
+\end{lstlisting}
+\end{frame}
+
+\end{document}
