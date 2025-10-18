@@ -1,9 +1,10 @@
+
 import ctypes
 import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the shared library
-lib_geometry = ctypes.CDLL("./code2.so")
+lib_geometry = ctypes.CDLL("/storage/emulated/0/MatrixTheory/ee1030-2025/ee25btech11043/matgeo/1.9.31/codes/code2.so")
 
 # Define argument and return types for findMidpoint
 lib_geometry.findMidpoint.argtypes = [

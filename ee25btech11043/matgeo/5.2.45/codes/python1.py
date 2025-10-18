@@ -1,16 +1,18 @@
+
+
 import ctypes
 import numpy as np
 import matplotlib.pyplot as plt
 
 # Load the shared library
 
-lib_solver = ctypes.CDLL("./code10.so")
+lib_solver = ctypes.CDLL("code10.so")
 
 
 # Define the argument types and return type for the C function
 lib_solver.solveLinearSystem.argtypes = [
     ctypes.c_double,  # a1
-    ctypes.c_double,  # b1
+    ctypes.c_double,  # b0
     ctypes.c_double,  # c1
     ctypes.c_double,  # a2
     ctypes.c_double,  # b2
@@ -72,3 +74,5 @@ plt.axhline(0, color='black', linewidth=0.5)
 plt.axvline(0, color='black', linewidth=0.5)
 plt.legend()
 plt.show()
+plt.savefig("plot.png")
+

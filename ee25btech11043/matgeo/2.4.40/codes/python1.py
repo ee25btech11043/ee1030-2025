@@ -78,3 +78,5 @@ plt.ylim(-10, 10) # Adjust y-limits for better viewing
 plt.xlim(-10, 10) # Adjust x-limits for better viewing
 plt.gca().set_aspect('equal', adjustable='box')
 plt.show()
+plt.savefig("f.png")
+

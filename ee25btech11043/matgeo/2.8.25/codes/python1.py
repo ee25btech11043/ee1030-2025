@@ -98,4 +98,6 @@ ax.set_zlim([-max_coord, max_coord])
 # Add grid
 ax.grid(True)
 
+plt.savefig("f.png")
 plt.show()
+
