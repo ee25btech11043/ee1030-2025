@@ -1,4 +1,3 @@
-// determinant_solver.c
 #include <stdio.h>
 
 // Function to calculate the determinant of a 3x3 matrix
