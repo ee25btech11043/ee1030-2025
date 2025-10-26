@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 // Function to calculate the coordinates of the other end of the diameter
-void formula(double x1, double y1, double xc, double yc, double *x2, double *y2) {
+void findOtherEndOfDiameter(double x1, double y1, double xc, double yc, double *x2, double *y2) {
     *x2 = 2 * xc - x1;
     *y2 = 2 * yc - y1;
 }
